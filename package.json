@@ -4,7 +4,9 @@
   "description": "hcl to json converter binary",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Everything is fine.\" && exit 0"
+    "test": "echo \"Everything is fine.\" && exit 0",
+    "postinstall": "go-npm install",
+    "preuninstall": "go-npm uninstall"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,6 @@
     "url": "https://github.com/TerraStackIO/hcl2json/issues"
   },
   "homepage": "https://github.com/TerraStackIO/hcl2json#readme",
-  "postinstall": "go-npm install",
-  "preuninstall": "go-npm uninstall",
   "goBinary": {
     "name": "hcl2json",
     "path": "./dist",
