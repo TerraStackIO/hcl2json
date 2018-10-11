@@ -1,17 +1,23 @@
 language: go
 go:
-  - "1.11.x"
-
+- 1.11.x
 env:
+  matrix:
   - GO111MODULE=on
 
 install: true
 
-# calls goreleaser
 deploy:
   - provider: script
     skip_cleanup: true
     script: curl -sL https://git.io/goreleaser | bash
     on:
       tags: true
-      condition: $TRAVIS_OS_NAME = linux
+      condition: "$TRAVIS_OS_NAME = linux"
+  - provider: npm
+    email: andreas.litt@gmail.com
+    api_key:
+      secure: Pztjo7UEvCnH8CdI2bYHwwR7eNfw+6qIsX1kPnouexp0HUikB2AI4EjT+u34JARll5lhKkUU49J6DDy48Gh07b2ZJmNLUjf0Z8qgYRMUc8Mr+YDhOLuyJX02MinzgUKHA97F1HwPABPD3Mt7U1wx/Nzqja/LQAXsnn+N7Vq7JYUcguqUpmkiTO7G29H3Gs0usgU0Kf33lxv3zfu+BvgerNp3gVSF2ogdiMKfQtiOienAsATgLDRXOIaMJrznCTPdVVtlVjag7mRWtPpPyNOldAveNVdN8CrcWS4Wt6hvLtfpp88HHq+ILTvl3gV9/csiY/W7drCf9MsPepjwwzPqCQNv0b+ptibrlpRLxtzotnL9CvQIxrKOZjrfn9fgtZDWUbpAHDbMF1gFtrX7QVToaoy9a66uxSq4J+jUEVQo/LNk25cZlntPsq5GajXfQGmk7qYBef/9qu4uH+nepNsRYlPOR+v0n7g1Y5/6wH014WWCY2dceQzJMoenfD2+GC4IdFUvf1t8GaR2LL95UC3lbRypDd7MtJfmmh3pUXJk472DjSYYWrC3dJQrdequDCnA4MssEyrfNyz8vlDLuUMKRZbe0nmiGBmI3PR93VEuC9rfaD4BJuy/hY8mTIgtkXot18T5p/AVIs6P1hOfECRFPdERAuYybH6slG2NeObpj2o=
+    on:
+      tags: true
+      condition: "$TRAVIS_OS_NAME = linux"

@@ -1,0 +1,34 @@
+{
+  "name": "hcl2json",
+  "version": "0.1.5",
+  "description": "hcl to json converter binary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Everything is fine.\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TerraStackIO/hcl2json.git"
+  },
+  "keywords": [
+    "hcl",
+    "json",
+    "terrastack"
+  ],
+  "author": "Andreas Litt",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/TerraStackIO/hcl2json/issues"
+  },
+  "homepage": "https://github.com/TerraStackIO/hcl2json#readme",
+  "postinstall": "go-npm install",
+  "preuninstall": "go-npm uninstall",
+  "goBinary": {
+    "name": "hcl2json",
+    "path": "./dist",
+    "url": "https://github.com/TerraStackIO/hcl2json/releases/download/v{{version}}/hcl2json_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  },
+  "dependencies": {
+    "go-npm": "^0.1.9"
+  }
+}
