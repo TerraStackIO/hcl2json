@@ -1,6 +1,6 @@
 {
   "name": "hcl2json",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "hcl to json converter binary",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,6 @@
     "url": "https://github.com/TerraStackIO/hcl2json/releases/download/v{{version}}/hcl2json_{{version}}_{{platform}}_{{arch}}.tar.gz"
   },
   "dependencies": {
-    "terrastack-go-npm": "^0.1.9"
+    "go-npm": "^0.1.9"
   }
 }
